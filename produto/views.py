@@ -1,6 +1,9 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import CreateView
+from .models import Produto
+from .forms import ProdutoForm
 
 
-class IndexView(TemplateView):
-    template_name = 'produto/index.html'
+class ProdutoCreate(CreateView):
+    model = Produto
+    form_class = ProdutoForm
+    success_url = '/'
