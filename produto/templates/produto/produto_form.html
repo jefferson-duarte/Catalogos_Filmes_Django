@@ -3,10 +3,29 @@
 {% block title %}Index{% endblock title %}
 
 {% block content %}
+    <center>
+        <h1>Cadastro de Filmes</h1>
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Salvar">
-    </form>
+        <div class="content-form">
+            <form method="post">
+                {% csrf_token %}
+                <label id="nome" name="nome">Nome: </label>
+                {{ form.nome }}
+                <br>
+                <label id="categoria" name="categoria">Categoria: </label>
+                {{ form.categoria }}
+                <br>
+                <label id="valor" name="valor">Valor: </label>
+                {{ form.valor }}
+                <br>
+                <label id="quantidade" name="quantidade">Quantidade: </label>
+                {{ form.quantidade }}
+                <br>
+
+                <div class="btn-form">
+                    <button type="submity" class="btn btn-success">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </center>
 {% endblock content %}

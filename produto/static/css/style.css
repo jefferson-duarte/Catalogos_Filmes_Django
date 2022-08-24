@@ -1,0 +1,27 @@
+.content-form {
+    background-color: rgb(75, 228, 205);
+    margin: 15px 15px;
+    padding: 15px;
+    width: fit-content;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.btn-form {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 30px;
+}
+
+#nome {
+    margin-right: 55px;
+}
+
+#categoria {
+    margin-right: 18px;
+}
+
+#valor {
+    margin-right: 61px;
+}
