@@ -1,12 +1,14 @@
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from .models import Produto
 from .forms import ProdutoForm
+from django.contrib.messages.views import SuccessMessageMixin
 
 
-class ProdutoCreate(CreateView):
+class ProdutoCreate(SuccessMessageMixin, CreateView):
     model = Produto
     form_class = ProdutoForm
     success_url = '/'
+    success_message = 'Filme %(nome)s foi criado com sucesso!'
 
 
 class ProdutoLista(ListView):
@@ -18,12 +20,14 @@ class ProdutoLista(ListView):
         return context
 
 
-class ProdutoUpdate(UpdateView):
+class ProdutoUpdate(SuccessMessageMixin, UpdateView):
     model = Produto
     form_class = ProdutoForm
     success_url = '/lista/'
+    success_message = 'Filme %(nome)s foi alterado com sucesso!'
 
 
-class ProdutoDeleta(DeleteView):
+class ProdutoDeleta(SuccessMessageMixin, DeleteView):
     model = Produto
     success_url = '/lista/'
+    success_message = 'Filme excluído com sucesso!'

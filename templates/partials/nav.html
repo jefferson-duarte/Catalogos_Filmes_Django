@@ -1,25 +1,27 @@
 <nav class="navbar navbar-expand-md bg-dark">
-    <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
-        <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'cadastro_produto' %}">Cadastrar Filmes</a>
-            </li>
-        </ul>
-    </div>
 
-    <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-        <a class="mx-auto" href="#">
-            Filmes
+    <div class="mx-auto">
+        <a class="m-auto" href="">
+            <img src="" alt="Logo">
         </a>
+
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
+
     </div>
 
-    <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
-        <ul class="navbar-nav mr-auto text-center">
+    <div class="navbar-collapse collapse dual-collapse2">
+
+        <ul class="navbar-nav m-auto text-center">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cadastro_produto' %}">Cadastrar Filmes</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'lista_produtos' %}">Listar Filmes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sair</a>
             </li>
         </ul>
     </div>

@@ -5,6 +5,16 @@
 {% block content %}
     <center>
         <h1>Cadastro de Filmes</h1>
+        
+        <div class="messages">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{message.tags}}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
 
         <div class="content-form">
             <form method="post">

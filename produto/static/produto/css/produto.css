@@ -58,7 +58,11 @@
     background-color: #4BE4CD;
     margin-top: 25px;
     border-radius: 10px;
-    height: fit-content;
+}
+
+.messages {
+    width: fit-content;
+    padding: 5px;
 }
 
 .form-delete {
@@ -70,6 +74,8 @@
     background-color: #4BE4CD;
     padding: 15px;
 }
+
+
 
 button a {
     color: white;

@@ -8,7 +8,20 @@
         <div class="titulo-lista">
             <h1>Lista de Filmes</h1>
         </div>
-        <div class="row justify-content-lg-center">
+
+        <center>
+            <div class="messages">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert {{message.tags}}">
+                            {{message}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </center>
+
+        <div class="row justify-content-sm-center">
             {% for produto in object_list %}
                 <div class="produto-lista col-4">
                     <p>Nome: {{ produto.nome }}</p>
