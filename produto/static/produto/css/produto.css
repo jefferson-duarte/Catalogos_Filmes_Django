@@ -60,3 +60,22 @@
     border-radius: 10px;
     height: fit-content;
 }
+
+.form-delete {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 25px;
+    font-family: sans-serif;
+    font-weight: bolder;
+    background-color: #4BE4CD;
+    padding: 15px;
+}
+
+button a {
+    color: white;
+}
+
+button a:hover {
+    text-decoration: none;
+    color: white;
+}
