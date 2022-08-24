@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md bg-dark">
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
         <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item">
-                <a class="nav-link" href="#">Link_1</a>
+                <a class="nav-link" href="{% url 'cadastro_produto' %}">Cadastrar Filmes</a>
             </li>
         </ul>
     </div>
@@ -11,7 +11,7 @@
         <a class="mx-auto" href="#">
             Filmes
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target=".dual-collapse2">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
@@ -19,7 +19,7 @@
     <div class="navbar-collapse collapse w-100 dual-collapse2 order-2 order-md-2">
         <ul class="navbar-nav mr-auto text-center">
             <li class="nav-item">
-                <a class="nav-link" href="#">LINK_2</a>
+                <a class="nav-link" href="{% url 'lista_produtos' %}">Listar Filmes</a>
             </li>
         </ul>
     </div>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista Filmes{% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="titulo-lista">
+            <h1>Lista de Filmes</h1>
+        </div>
+        <div class="row justify-content-lg-center">
+            {% for produto in object_list %}
+                <div class="produto-lista col-4">
+                    <p>Nome: {{ produto.nome }}</p>
+                    <p>Categoria: {{ produto.categoria }}</p>
+                    <p>Valor: R${{ produto.valor }}</p>
+                    <p>Quantidade: {{ produto.quantidade }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
