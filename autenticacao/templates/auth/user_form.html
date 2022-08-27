@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastro Usuário{% endblock title %}
+
+{% block content %}
+    <center>
+
+        <div class="title-content">
+            <h1>Registre-se</h1>
+        </div>
+
+        <div class="form-cadastro">
+            <form action="" method="post">
+                {% csrf_token %}
+            
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Username: </td>
+                            <td>{{ form.username }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Nome: </td>
+                            <td>{{ form.first_name }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Sobre Nome: </td>
+                            <td>{{ form.last_name }}</td>
+                        </tr>
+
+                        <tr>
+                            <td>E-mail: </td>
+                            <td>{{ form.email }}</td>
+                        </tr>
+                        <tr>
+                            <td>Senha: </td>
+                            <td>{{ form.password }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="btn-form">
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                </div>
+
+            </form>
+        </div>
+    </center>
+{% endblock content %}

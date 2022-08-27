@@ -7,12 +7,13 @@ from django.contrib.messages.views import SuccessMessageMixin
 class ProdutoCreate(SuccessMessageMixin, CreateView):
     model = Produto
     form_class = ProdutoForm
-    success_url = '/'
+    success_url = '/cadastro/'
     success_message = 'Filme %(nome)s foi criado com sucesso!'
 
 
 class ProdutoLista(ListView):
     model = Produto
+    paginate_by = 6
     queryset = Produto.objects.all().order_by('-pk')
 
     def get_context_data(self, **produtos):
@@ -23,11 +24,11 @@ class ProdutoLista(ListView):
 class ProdutoUpdate(SuccessMessageMixin, UpdateView):
     model = Produto
     form_class = ProdutoForm
-    success_url = '/lista/'
+    success_url = '/'
     success_message = 'Filme %(nome)s foi alterado com sucesso!'
 
 
 class ProdutoDeleta(SuccessMessageMixin, DeleteView):
     model = Produto
-    success_url = '/lista/'
+    success_url = '/'
     success_message = 'Filme excluído com sucesso!'
