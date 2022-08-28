@@ -9,6 +9,16 @@
             <h1>Registre-se</h1>
         </div>
 
+        <div class="messages">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{message.tags}}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
         <div class="form-cadastro">
             <form action="" method="post">
                 {% csrf_token %}
