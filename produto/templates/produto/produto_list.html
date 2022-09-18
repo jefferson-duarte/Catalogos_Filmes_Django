@@ -21,19 +21,34 @@
             </div>
         </center>
 
-        <div class="row justify-content-sm-center">
-            {% for produto in object_list %}
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+                {% for produto in object_list %}
+
+                    <div class="col-md-4">
+                        <div class="card produto-lista p-1 ">
+                            <p>Nome: {{ produto.nome }}</p>
+                            <p>Categoria: {{ produto.categoria }}</p>
+                            <p>Valor: R${{ produto.valor }}</p>
+                            <p>Quantidade: {{ produto.quantidade }}</p>
+                            <p>
+                                <a href="{% url 'edita_produto' produto.pk %}">Editar</a>
+                                <a href="{% url 'deleta_produto' produto.pk %}">Deletar</a>                    
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+
+        </div>
+{% comment %} 
                 <div class="produto-lista col-4">
-                    <p>Nome: {{ produto.nome }}</p>
-                    <p>Categoria: {{ produto.categoria }}</p>
-                    <p>Valor: R${{ produto.valor }}</p>
-                    <p>Quantidade: {{ produto.quantidade }}</p>
-                    <p>
-                        <a href="{% url 'edita_produto' produto.pk %}">Editar</a>
-                        <a href="{% url 'deleta_produto' produto.pk %}">Deletar</a>                    
-                    </p>
-                </div>
-            {% endfor %}
+                    
+                </div> {% endcomment %}
         </div>
     </div>
 
