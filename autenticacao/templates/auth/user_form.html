@@ -20,7 +20,7 @@
         </div>
 
         <div class="form-cadastro">
-            <form action="" method="post">
+            <form action="{% url "cadastro_usuario" %}" method="POST">
                 {% csrf_token %}
             
                 <table>
@@ -46,10 +46,16 @@
                         </tr>
                         <tr>
                             <td>Senha: </td>
-                            <td>{{ form.password }}</td>
+                            <td>{{ form.password1 }}</td>
+                        </tr>
+                        <tr>
+                            <td>Confirme Senha: </td>
+                            <td>{{ form.password2 }}</td>
                         </tr>
                     </tbody>
-                </table>
+                </table> 
+
+                {% comment %} {{form}} {% endcomment %}
 
                 <div class="btn-form">
                     <button type="submit" class="btn btn-success">Cadastrar</button>
