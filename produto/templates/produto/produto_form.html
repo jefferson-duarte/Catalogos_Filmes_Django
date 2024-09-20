@@ -17,25 +17,18 @@
         </div>
 
         <div class="content-form">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <label id="nome" name="nome">Nome: </label>
-                {{ form.nome }}
-                <br>
-                <label id="categoria" name="categoria">Categoria: </label>
-                {{ form.categoria }}
-                <br>
-                <label id="valor" name="valor">Valor: </label>
-                {{ form.valor }}
-                <br>
-                <label id="quantidade" name="quantidade">Quantidade: </label>
-                {{ form.quantidade }}
-                <br>
+
+                <table>
+                    {{ form.as_table }}
+                </table>
 
                 <div class="btn-form">
-                    <button type="submity" class="btn btn-success">Salvar</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
                 </div>
             </form>
         </div>
+
     </center>
 {% endblock content %}

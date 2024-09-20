@@ -32,7 +32,13 @@
                             <p>Categoria: {{ produto.categoria }}</p>
                             <p>Valor: R${{ produto.valor }}</p>
                             <p>Quantidade: {{ produto.quantidade }}</p>
-                            
+
+                            {% if produto.capa %}
+                                <img src="{{ produto.capa.url }}" alt="{{ produto.nome }}" />
+                            {% else %}
+                                <p>Este filme não possui capa.</p>
+                            {% endif %}                            
+
                             <hr>
                             
                             <span class="text-center">

@@ -1,24 +1,35 @@
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
-from .models import Produto
-from .forms import ProdutoForm
 from django.contrib.messages.views import SuccessMessageMixin
+from django.forms import BaseForm
+from django.http.response import HttpResponse
+from django.views.generic import CreateView, DeleteView, ListView, UpdateView
+
+from .forms import ProdutoForm
+from .models import Produto
 
 
 class ProdutoCreate(SuccessMessageMixin, CreateView):
     model = Produto
     form_class = ProdutoForm
     success_url = '/cadastro/'
-    success_message = 'Filme %(nome)s foi criado com sucesso!'
+
+    def get_success_message(self, cleaned_data):
+        return f'Filme "{self.object.nome}" foi criado com sucesso!'
+
+    def form_valid(self, form: BaseForm) -> HttpResponse:
+        form.instance.user = self.request.user
+
+        return super().form_valid(form)
 
 
 class ProdutoLista(ListView):
     model = Produto
     paginate_by = 6
-    queryset = Produto.objects.all().order_by('-pk')
 
-    def get_context_data(self, **produtos):
-        context = super().get_context_data(**produtos)
-        return context
+    def get_queryset(self):
+        user = self.request.user
+        qs = Produto.objects.filter(user=user)
+
+        return qs
 
 
 class ProdutoUpdate(SuccessMessageMixin, UpdateView):
